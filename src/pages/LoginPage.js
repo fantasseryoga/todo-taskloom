@@ -66,10 +66,16 @@ export const LoginPage = () => {
                         </label>
                         <input className="w-full login-input py-2" id="password" name="password" onChange={changeHandler} type="password" placeholder="Type here" />
                     </div>
-                    <h3>{formErrors}</h3>
-                    <button class="font-bold py-2 px-9 px-4 log-in-btn" onClick={loginHandler}>
+                    <button class="font-bold py-2 px-9 mb-4 px-4 log-in-btn" onClick={loginHandler}>
                         Log In
                     </button>
+                    <br/>
+                    {
+                        formErrors.length ?
+                            <span className="formErrors">*{formErrors}</span>
+                            :
+                            null
+                    }
                 </div>
             </div>
             <br />

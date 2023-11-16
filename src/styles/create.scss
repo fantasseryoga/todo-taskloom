@@ -1,0 +1,64 @@
+.container-task-cr {
+    width: 640px;
+    background-color: rgba(255, 255, 255, 0);
+    margin: 0 auto;
+    margin-top: 74px;
+    background-color: rgba(255, 255, 255, 0.50);
+    padding: 80px 64px 80px 64px;
+    margin-bottom: 100px;
+}
+
+.create-task-text {
+    color: var(--text, #F2767D);
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.create-btn{
+    border-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(91deg, #EE4D5F 0.57%, #FFCFA5 99.41%) 1;
+    border-radius: 0px 20px 20px 0px !important;
+    font-size: 32px;
+    color: var(--text, #F2767D);
+}
+
+.body-back{
+    background: none !important;
+}
+
+.task-datepicker {
+    #date{
+        background-color: rgba(255, 255, 255, 0) !important;
+        border-width: 2px;
+        border-style: solid;
+        color: var(--text, #F2767D);
+        border-image: linear-gradient(91deg, #EE4D5F 0.57%, #FFCFA5 99.41%) 1;
+    }
+
+    #date::placeholder{
+        color: var(--text, #F2767D);
+    }
+
+    .top-12{
+        top: auto;
+    }
+
+    .bg-blue-700{
+        background: var(--grad-main, linear-gradient(91deg, #EE4D5F 0.57%, #FFCFA5 99.41%));
+    }
+
+    .w-full{
+        border-width: 2px;
+        border-style: solid;
+        color: var(--text, #F2767D);
+        border-image: linear-gradient(91deg, #EE4D5F 0.57%, #FFCFA5 99.41%) 1;
+    }
+
+    svg{
+        color: var(--text, #F2767D);
+    }
+}

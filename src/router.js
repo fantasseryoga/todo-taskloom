@@ -2,6 +2,7 @@ import React from 'react'
 import { LoginPage } from './pages/LoginPage';
 import { RegisterPage } from './pages/RegisterPage';
 import { Routes, Route, Navigate } from 'react-router-dom'
+import { CreateTask } from './pages/CreateTask';
 
 
 export const useRoutes = isAuthenticated => {
@@ -10,8 +11,8 @@ export const useRoutes = isAuthenticated => {
         return (
             <Routes>
                 
-                {/* <Route path="/add-advertisement" element={<AddAdvertisementPage />} /> */}
-                {/* <Route path="*" element={<Navigate to='/advertisements-list' />} /> */}
+                <Route path="/" element={<CreateTask />} />
+                <Route path="*" element={<Navigate to='/' />} />
             </Routes>
         )
     }
@@ -20,7 +21,7 @@ export const useRoutes = isAuthenticated => {
         <Routes>
             <Route exact path="/" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
-            {/* <Route path="*" element={<Navigate to='/' />} /> */}
+            <Route path="*" element={<Navigate to='/' />} />
         </Routes>
     )
 }

@@ -13,6 +13,7 @@
     "react-scripts": "^5.0.1",
     "redux": "^4.2.1",
     "sass": "^1.69.5",
+    "tailwind-datepicker-react": "^1.4.3",
     "web-vitals": "^2.1.4"
   },
   "proxy": "http://127.0.0.1:8000",

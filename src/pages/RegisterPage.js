@@ -46,7 +46,7 @@ export const RegisterPage = () => {
                 setFormErrors(data.detail)
             }
 
-            if (response.status === 422){
+            if (response.status === 422) {
                 const data = await response.json()
                 setFormErrors(data.detail.map(el => el.msg))
             }
@@ -87,12 +87,19 @@ export const RegisterPage = () => {
                         </label>
                         <input className="w-full login-input py-2" id="passwordR" name="passwordR" onChange={changeHandler} type="password" placeholder="Type here"></input>
                     </div>
-                    <button class="font-bold py-2 px-9 px-4 log-in-btn" onClick={registerHandler}>
+                    <button class="font-bold py-2 px-9 mb-4 px-4 log-in-btn" onClick={registerHandler}>
                         Register
                     </button>
+                    <br />
+                    {
+                        formErrors.length ?
+                            <span className="formErrors">*{formErrors}</span>
+                            :
+                            null
+                    }
                 </div>
             </div>
-            <br/>
+            <br />
         </>
     )
 }
