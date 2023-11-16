@@ -1,13 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+
+const defaultState = {
+  token: JSON.parse(localStorage.getItem('token')),
+  isAuthenticated: false,
+  userName: null,
+}
+
+const reducer = (state = defaultState, action) => {
+  if (action.type === "SET_TOKEN") {
+    return { ...state, token: action.payload }
+  }
+
+  if (action.type === "SET_AUTH") {
+    return { ...state, isAuthenticated: action.payload }
+  }
+
+  if (action.type === "SET_USER_NAME") {
+    return { ...state, userName: action.payload }
+  }
+
+  return state
+}
+
+const store = createStore(reducer)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 
