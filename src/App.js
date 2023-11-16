@@ -3,6 +3,7 @@ import { createStore } from 'redux';
 import { useState, useCallback, useEffect } from 'react'
 import { useRoutes } from './router'
 import { BrowserRouter as Router } from 'react-router-dom'
+import background from './img/ballons.png'
 import "./index.css"
 
 function App() {
@@ -11,9 +12,11 @@ function App() {
   const routes = useRoutes(isAuthenticated)
 
   return (
-      <Router>
+    <Router>
+      <div className='body-back' style={{ backgroundImage: `url(${background})` }}>
         {routes}
-      </Router>
+      </div>
+    </Router>
   );
 }
 

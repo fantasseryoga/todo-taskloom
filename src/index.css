@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body{
+    background: #E8E8F3;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+.body-back{
+    background-repeat: no-repeat;
+    background-size: cover;
+}

@@ -1,0 +1,25 @@
+.navbar {
+    width: 640px;
+    margin: 0 auto;
+    border-radius: 0px 0px 25px 25px;
+    background: white;
+    backdrop-filter: blur(12.5px);
+    height: 80px;
+}
+
+.onehp {
+    width: 100%;
+}
+
+.gradient-bg-txt-logo {
+    background: var(--grad-main, linear-gradient(91deg, #EE4D5F 0.57%, #FFCFA5 99.41%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 40px;
+}
+
+.gradient-bg-txt {
+    color: var(--text, #F2767D);
+    font-size: 24px;
+}
