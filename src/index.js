@@ -6,9 +6,9 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
 const defaultState = {
-  token: JSON.parse(localStorage.getItem('token')),
-  isAuthenticated: false,
-  userName: null,
+  token: localStorage.getItem('token'),
+  isAuthenticated: !!localStorage.getItem('token'),
+  userName: localStorage.getItem('username'),
 }
 
 const reducer = (state = defaultState, action) => {

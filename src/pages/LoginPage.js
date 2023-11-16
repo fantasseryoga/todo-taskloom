@@ -4,12 +4,14 @@ import "../styles/auth.scss"
 import { Navbar } from "../components/Navbar"
 import { useState } from "react"
 import { useHttp } from "../hooks/http.hook"
+import { useAuth } from "../hooks/auth.hook"
 
 export const LoginPage = () => {
+    const { logout, login} = useAuth()
     const { loading, request } = useHttp()
     const [formErrors, setFormErrors] = useState([])
     const [form, setForm] = useState({
-        username: '',
+        name: '',
         password: ''
     })
 
@@ -26,14 +28,18 @@ export const LoginPage = () => {
             const response = await request("/user-login", "POST", { ...form })
             if (response.status === 400) {
                 const data = await response.json()
-                setFormErrors(data.errors.map(el => el.msg))
+                setFormErrors(data.detail)
+            }
+
+            if (response.status === 422){
+                const data = await response.json()
+                setFormErrors(data.detail.map(el => el.msg))
             }
 
             if (response.status === 200) {
                 const data = await response.json()
 
-                // login(data.access_token, data.user.name)
-                console.log(data)
+                login(data.access_token, data.user.name)
                 setFormErrors([])
             }
 
@@ -54,12 +60,13 @@ export const LoginPage = () => {
                         <label class="block font-bold login-input-label mb-2" for="username">
                             Username
                         </label>
-                        <input className="w-full login-input py-2" id="username" name="username" onChange={changeHandler} type="text" placeholder="Type here" />
+                        <input className="w-full login-input py-2" id="username" name="name" onChange={changeHandler} type="text" placeholder="Type here" />
                         <label class="block login-input-label font-bold mb-2 mt-12" for="password">
                             Password
                         </label>
                         <input className="w-full login-input py-2" id="password" name="password" onChange={changeHandler} type="password" placeholder="Type here" />
                     </div>
+                    <h3>{formErrors}</h3>
                     <button class="font-bold py-2 px-9 px-4 log-in-btn" onClick={loginHandler}>
                         Log In
                     </button>
