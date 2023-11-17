@@ -1,5 +1,5 @@
-import { useState, useCallback, useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useCallback } from 'react'
+import { useDispatch } from 'react-redux'
 
 export const useAuth = () => {
     const dispatch = useDispatch()
@@ -10,7 +10,7 @@ export const useAuth = () => {
         dispatch({type: "SET_AUTH", payload: true})
         localStorage.setItem("token", jwt)
         localStorage.setItem("username", name)
-    }, [])
+    }, [dispatch])
 
     const logout = useCallback(() => {
         dispatch({type: "SET_TOKEN", payload: null})
@@ -19,7 +19,7 @@ export const useAuth = () => {
         alert("Succesfully loged out")
         localStorage.removeItem("token")
         localStorage.removeItem("username")
-    }, [])
+    }, [dispatch])
 
     return { login, logout }
 }

@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom"
 
 export const RegisterPage = () => {
     const navigate = useNavigate()
-    const { loading, request } = useHttp()
+    const { request } = useHttp()
     const [formErrors, setFormErrors] = useState([])
     const [form, setForm] = useState({
         name: '',
@@ -30,7 +30,7 @@ export const RegisterPage = () => {
                     formErrors.splice(index, 1);
                 }
             }
-            if (form.password != form.passwordR) {
+            if (form.password !== form.passwordR) {
                 if (formErrors.includes("Password mismatch")) {
                     return
                 }
@@ -52,7 +52,6 @@ export const RegisterPage = () => {
             }
 
             if (response.status === 200) {
-                const data = await response.json()
                 setFormErrors([])
 
                 alert('User has been created succesfully')

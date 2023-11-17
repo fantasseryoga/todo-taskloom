@@ -4,7 +4,7 @@ import { useAuth } from "../hooks/auth.hook";
 import { useSelector } from "react-redux";
 
 export const Navbar = () => {
-    const { login, logout } = useAuth()
+    const { logout } = useAuth()
     const isAuthenticated = useSelector(state => state.isAuthenticated)
 
     return (
@@ -16,7 +16,7 @@ export const Navbar = () => {
                             {
                                 isAuthenticated ?
                                     <>
-                                        <a href="/create-task" class="gradient-bg-txt rounded-md px-3 py-2 text-sm font-medium">CreateTask</a>
+                                        <a href="/create" class="gradient-bg-txt rounded-md px-3 py-2 text-sm font-medium">CreateTask</a>
                                         <a href="/" class="gradient-bg-txt-logo py-2 text-sm font-medium">Task Loom</a>
                                         <a href="#" onClick={logout} class="gradient-bg-txt py-2 text-sm font-medium">Logout</a>
                                     </>

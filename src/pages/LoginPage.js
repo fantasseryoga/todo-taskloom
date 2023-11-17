@@ -1,5 +1,5 @@
 import { React } from "react"
-import styles from "../index.css"
+import "../index.css"
 import "../styles/auth.scss"
 import { Navbar } from "../components/Navbar"
 import { useState } from "react"
@@ -7,8 +7,8 @@ import { useHttp } from "../hooks/http.hook"
 import { useAuth } from "../hooks/auth.hook"
 
 export const LoginPage = () => {
-    const { logout, login} = useAuth()
-    const { loading, request } = useHttp()
+    const { login} = useAuth()
+    const { request } = useHttp()
     const [formErrors, setFormErrors] = useState([])
     const [form, setForm] = useState({
         name: '',
