@@ -1,10 +1,11 @@
 import { React } from "react"
-import "../index.css"
-import "../styles/auth.scss"
 import { Navbar } from "../components/Navbar"
 import { useState } from "react"
 import { useHttp } from "../hooks/http.hook"
 import { useAuth } from "../hooks/auth.hook"
+import "../index.css"
+import "../styles/auth.scss"
+
 
 export const LoginPage = () => {
     const { login} = useAuth()
@@ -53,7 +54,7 @@ export const LoginPage = () => {
     return (
         <>
             < Navbar />
-            <div className="container log">
+            <div className="container-auth log">
                 <div className="login-form-cnt">
                     <h1 className="welcome-back-text">Welcome back!</h1>
                     <div className="fields-cn my-10">

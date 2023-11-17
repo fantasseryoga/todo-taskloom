@@ -7,6 +7,7 @@ import { useHttp } from "../hooks/http.hook"
 import Datepicker from "tailwind-datepicker-react"
 import { useSelector } from "react-redux"
 
+
 const options = {
 	title: "Demo Title",
 	autoHide: true,
@@ -76,7 +77,7 @@ export const CreateTaskPage = () => {
                 return
             }
 
-			if (6 <= task.priority <= 0){
+			if (task.priority <= 0 || task.priority >= 6){
 				setFormErrors(["Value error, Priority should be in 1-5 range"])
                 return
 			}

@@ -121,6 +121,12 @@
     font-size: 12px;
 }
 
+.action-btn-delete:hover {
+    background: var(--grad-main, linear-gradient(91deg, #EE4D5F 0.57%, #FFCFA5 99.41%));
+    color: white;
+    transition: 0.3s;
+}
+
 .active {
     background: var(--grad-main, linear-gradient(91deg, #EE4D5F 0.57%, #FFCFA5 99.41%));
     color: white;
@@ -133,4 +139,45 @@
     border-image: linear-gradient(91deg, #EE4D5F 0.57%, #FFCFA5 99.41%) 1;
     color: var(--text, #F2767D);
     transition: 0.3s;
+}
+
+.no-tasks-text {
+    color: var(--text, #F2767D);
+    text-align: center;
+    font-size: 25px;
+}
+
+.done-task {
+    background: var(--grad-main, linear-gradient(91deg, #EE4D5F 0.57%, #FFCFA5 99.41%)) !important;
+
+    .task-priority {
+        background: white;
+        color: var(--text, #F2767D);
+        ;
+    }
+
+    .task-title,
+    .task-date {
+        color: white;
+    }
+
+    .btn-svg{
+        color: white;
+    }
+
+    .action-btn-delete{
+        color: white;
+        border: white 1px solid;
+    }
+
+    transition: 0.5s;
+}
+
+.btn-svg {
+    font-size: 30px;
+    color: #EE4D5F;
+}
+
+.btn-svg:hover {
+    color: rgba(238, 77, 96, 0.359)
 }

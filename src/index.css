@@ -4,6 +4,7 @@
 
 body{
     background: #E8E8F3;
+    font-family: 'Red Hat Display', sans-serif;
 }
 
 textarea:focus, input:focus{

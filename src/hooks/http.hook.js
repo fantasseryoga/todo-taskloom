@@ -1,10 +1,13 @@
 import { useState, useCallback } from 'react'
+import { useAuth } from './auth.hook'
+
 
 export const useHttp = () => {
+    const {logout} = useAuth()
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
 
-    const request = useCallback(async (url, method = 'GET', body = null, headers = {}) => {
+    const request = useCallback(async (url, method = 'GET', body = null, headers = {}, signal = null) => {
         setLoading(true)
 
         try {
@@ -14,20 +17,18 @@ export const useHttp = () => {
                 headers['Accept'] = 'application/json'
             }
 
-            const response = await fetch(url, { method, body, headers })
+            const response = await fetch(url, { method, body, headers, signal })
 
             setLoading(false)
 
-            if (response.status === 401) {
-                // logout()
+            if (response.status === 403 || response.status === 401) {
+                logout()
             }
 
             return response
         } catch (e) {
             setLoading(false)
             setError(e.message)
-
-            throw e
         }
     }, [])
 

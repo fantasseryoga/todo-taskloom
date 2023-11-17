@@ -1,9 +1,10 @@
 import React from "react"
 import { Navbar } from "../components/Navbar"
 import { useState } from "react"
-import "../styles/auth.scss"
 import { useHttp } from "../hooks/http.hook"
 import { useNavigate } from "react-router-dom"
+import "../styles/auth.scss"
+
 
 export const RegisterPage = () => {
     const navigate = useNavigate()
@@ -69,7 +70,7 @@ export const RegisterPage = () => {
     return (
         <>
             <Navbar />
-            <div className="container reg">
+            <div className="container-auth reg">
                 <div className="login-form-cnt">
                     <h1 className="welcome-back-text">Registration</h1>
                     <div className="fields-cn my-10">
