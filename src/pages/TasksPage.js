@@ -44,7 +44,7 @@ export const TaskPage = () => {
 						return el
 					}))
 				} else {
-					setTasks(tasks.filter(item => item.id != taskID))
+					setTasks(tasks.filter(item => item.id !== taskID))
 				}
 
 			}
@@ -64,7 +64,7 @@ export const TaskPage = () => {
 	useEffect(() => {
 		const controller = new AbortController()
 		try {
-			request("/tasks-by-user", "POST", { ...form }, { token: token }, controller.signal).then(response => {
+			request("task/tasks-by-user", "POST", { ...form }, { token: token }, controller.signal).then(response => {
 				if (controller.signal.aborted) {
 					throw "Aborted"
 				}
@@ -88,7 +88,7 @@ export const TaskPage = () => {
 		}
 
 		return () => controller.abort()
-	}, [request, form])
+	}, [request, form, token, logout])
 
 	return (
 		<>

@@ -39,7 +39,7 @@ export const RegisterPage = () => {
 
                 return
             }
-            const response = await request("/user-reg", "POST", { name: form.name, password: form.password })
+            const response = await request("/user/reg", "POST", { name: form.name, password: form.password })
 
 
             if (response.status === 400) {

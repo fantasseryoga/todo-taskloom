@@ -26,7 +26,7 @@ export const LoginPage = () => {
             return
         }
         try {
-            const response = await request("/user-login", "POST", { ...form })
+            const response = await request("/user/log", "POST", { ...form })
             if (response.status === 400) {
                 const data = await response.json()
                 setFormErrors(data.detail)

@@ -22,7 +22,7 @@ const options = {
 		clearBtn: "",
 		icons: "",
 		text: "",
-		disabledText: "",
+		disabledText: "bg-red-500",
 		input: "",
 		inputIcon: "",
 		selected: "",
