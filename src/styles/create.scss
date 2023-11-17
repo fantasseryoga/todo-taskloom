@@ -26,6 +26,12 @@
     color: var(--text, #F2767D);
 }
 
+.create-btn:hover{
+    background: var(--grad-main, linear-gradient(91deg, #EE4D5F 0.57%, #FFCFA5 99.41%));
+    color: white;
+    transition: 0.3s;
+}
+
 .task-datepicker {
     #date{
         background-color: rgba(255, 255, 255, 0) !important;
